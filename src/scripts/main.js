@@ -61,11 +61,10 @@ function sorting(items, sortBy) {
           break;
 
         case 'age':
-          if (
-            items[i].cells[2].innerText.localeCompare(
-              items[i + 1].cells[2].innerText,
-            ) > 0
-          ) {
+          const age1 = items[i].cells[2].innerText;
+          const age2 = items[i + 1].cells[2].innerText;
+
+          if (+age1 > +age2) {
             itemNext.after(item);
           }
           break;
